@@ -1,0 +1,21 @@
+html,
+body {
+  height: 100%;
+}
+
+body{
+    margin: 0;
+    font: 18px/1.72 'Neucha', sans-serif;
+    min-width: 320px;
+    background-color: #fbcd91;
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0;
+}
