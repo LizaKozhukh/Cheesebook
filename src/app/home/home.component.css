@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     background: #ff9302 url("../../assets/images/cheese-platter.jpg") center /cover no-repeat;
+    transition: .1s;
 }
 
 .intro-inner {
@@ -16,4 +17,5 @@
     padding: 20px;
     color: #fdeedb;
     letter-spacing: 3px;
+    transition: .1s;
 }

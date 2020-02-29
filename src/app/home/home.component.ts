@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    document.addEventListener('mousemove', this.onMouseMove)
+   }
 
   ngOnInit() {
   }
 
+  private onMouseMove = (event: MouseEvent) => {
+    let intro = document.querySelector(".intro-inner") as HTMLElement;
+    intro.style.transform = "translate(-" + event.pageX/100 + "px, -" + event.pageY/100 + "px)"
+  }
+
 }
+
+
