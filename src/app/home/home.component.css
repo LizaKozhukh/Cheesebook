@@ -1,7 +1,5 @@
-.intro {
-    position: relative;
+.intro { 
     min-height: 1000px;
-    height: 100%;
     display: flex;
     align-items: center;
     background: #ff9302 url("https://i.ibb.co/YhCdMPr/cheese-platter.jpg") center /cover no-repeat;
@@ -9,13 +7,62 @@
 }
 
 .intro-inner {
+    text-shadow: 1px 1px 1px rgb(167, 137, 122), 0 0 1em rgb(165, 109, 57);
     background: url("https://i.ibb.co/9prWsgX/intro-top.png") no-repeat;
     margin: 0 auto 0 20%;
     width: 650px;
     height: 450px;
     font-size: 40px;
     padding: 20px;
-    color: #fdeedb;
+    color: #ffecd3;
     letter-spacing: 3px;
     transition: .1s;
+    opacity: 0;
+    animation: appearing 2s 1 0s forwards;
+}
+
+.intro-inner>p{
+    padding: 10px;
+    line-height: 40px;
+    font-weight: 700;
+}
+
+.intro .cheeseimg{
+    display: flex;
+    justify-content: space-between;
+}
+
+#cheese-img{
+    animation: appearing 3s 1 0s forwards;
+}
+
+.content{
+    min-height: 1200px;
+    background: #ff9302 url("https://i.ibb.co/jrCQRmV/intro2-background.jpg");
+}
+
+.footer{
+    background-color: #ac4306;
+    color: #ffecd3;
+    min-height: 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer>h3>a{
+    color: #ffecd3;
+    transition: .1s;
+}
+
+.footer>h3>a:hover{
+    color: #fcb251;
+}
+
+
+@keyframes appearing {
+    50% {opacity: 0; }
+    100% {opacity: 1;}
 }
