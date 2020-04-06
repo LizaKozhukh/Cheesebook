@@ -5,8 +5,8 @@
             <nav class="navigation">
                 <a class="nav-link" href="">Home</a>
                 <a class="nav-link" [routerLink]="['/popular']">Popular</a>
-                <a class="nav-link" [routerLink]="['/bucket']">Bucket</a>
-                <a class="nav-link" (click)="openDialog()">Sign up</a>
+                <a class="nav-link" (click)="logIn()">{{user ? 'Your bucket' : 'Log in'}}</a>
+                <a class="nav-link" (click)="signUp()">Sign up</a>
             </nav>
         </div>
     </div>       

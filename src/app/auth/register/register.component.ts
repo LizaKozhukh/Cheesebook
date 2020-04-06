@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent{
+export class RegisterComponent implements OnInit{
 
   registerForm: FormGroup;
   loading = false;
@@ -15,9 +15,8 @@ export class RegisterComponent{
 
   constructor(
     private formBuilder: FormBuilder,
-    public dialogRef: MatDialogRef<RegisterComponent>,
-    @Inject(MAT_DIALOG_DATA) public user: string) 
-  { }
+    public dialogRef: MatDialogRef<RegisterComponent>) 
+  {}
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -26,20 +25,18 @@ export class RegisterComponent{
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
-    this.user = "dfgdfgfd"
   }
 
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
     this.submitted = true;
-    if (this.registerForm.invalid) return; 
+    if (this.registerForm.invalid) {
+     alert("Please, fill the form correctly!")
+      return;
+    } 
     this.loading = true;
-    this.user = this.registerForm.value.username;
-  }
-
-  onNoClick(): void {
-    this.dialogRef.close();
+    this.dialogRef.close( this.registerForm.value.username)
   }
 
 }

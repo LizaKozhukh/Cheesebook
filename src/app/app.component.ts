@@ -9,15 +9,17 @@ import { RegisterComponent } from './auth/register/register.component';
 })
 export class AppComponent {
   title = 'Cheesebook';
+  user: string;
 
   constructor(public dialog: MatDialog) {}
 
-  openDialog(){
+  signUp(){
     const dialogRef = this.dialog.open(RegisterComponent, {
-      data: "hello fucking world!"
+      panelClass: 'custom-dialog-container',
+      backdropClass: 'backdropBackground'
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+      this.user = result;
     });
   }
 
